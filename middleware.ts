@@ -5,12 +5,14 @@ export default authMiddleware({
       '/',
       '/myadverts',
       '/create',
+      '/adverts:adID',
       '/api/webhook/clerk',
       '/api/uploadthing'
     ],
     ignoredRoutes: [
       '/myadverts',
       '/create',
+      '/adverts:adID',
       '/api/webhook/clerk',
       '/api/uploadthing'
     ]
