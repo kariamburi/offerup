@@ -10,6 +10,7 @@ export type FormData = {
   negotiable: boolean;
   images: Array<string>;
   pack: string;
+  imgno: number;
 };
 
 export type uploadData = {
