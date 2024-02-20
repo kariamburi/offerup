@@ -3,16 +3,12 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
     publicRoutes: [
       '/',
-      '/myadverts',
-      '/create',
-      '/adverts:adID',
+      '/adverts',
       '/api/webhook/clerk',
       '/api/uploadthing'
     ],
     ignoredRoutes: [
       '/myadverts',
-      '/create',
-      '/adverts:adID',
       '/api/webhook/clerk',
       '/api/uploadthing'
     ]

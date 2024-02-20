@@ -10,7 +10,7 @@ export async function POST(req: Request) {
  
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
- 
+  console.log(WEBHOOK_SECRET);
   if (!WEBHOOK_SECRET) {
     throw new Error('Please add WEBHOOK_SECRET from Clerk Dashboard to .env or .env.local')
   }
@@ -30,7 +30,7 @@ export async function POST(req: Request) {
  
   // Get the body
   const payload = await req.json()
-  //console.log(payload);
+  console.log(payload);
   const body = JSON.stringify(payload);
  
   // Create a new Svix instance with your secret.
@@ -57,6 +57,7 @@ export async function POST(req: Request) {
   const eventType = evt.type;
  
   if(eventType === 'user.created') {
+    console.log("USER CREATE");
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
 
     const user = {
@@ -69,7 +70,7 @@ export async function POST(req: Request) {
     }
 
     const newUser = await createUser(user);
-
+    console.log(newUser);
     if(newUser) {
       await clerkClient.users.updateUserMetadata(id, {
         publicMetadata: {
