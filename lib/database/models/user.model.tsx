@@ -1,14 +1,12 @@
 import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema({
+  clerkId: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
-  contactName: { type: String, required: true },
-  contactNumber: { type: String, required: false },
-  photo: { type: String, required: false },
-  businessName: { type: String, required: false },
-  facebooklink: { type: String, required: false },
-  instagramlink: { type: String, required: false },
-  youtubelink: { type: String, required: false },
+  username: { type: String, required: true, unique: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  photo: { type: String, required: true },
 });
 
 const User = models.User || model("User", UserSchema);

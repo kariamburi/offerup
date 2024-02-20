@@ -52,22 +52,17 @@ export type adData = {
 };
 // ====== USER PARAMS
 export type CreateUserParams = {
+  clerkId: string;
+  firstName: string;
+  lastName: string;
+  username: string;
   email: string;
-  contactName: string;
-  contactNumber: string;
   photo: string;
-  businessName: string;
-  facebooklink: string;
-  instagramlink: string;
-  youtubelink: string;
 };
 
 export type UpdateUserParams = {
-  contactName: string;
-  contactNumber: string;
+  firstName: string;
+  lastName: string;
+  username: string;
   photo: string;
-  businessName: string;
-  facebooklink: string;
-  instagramlink: string;
-  youtubelink: string;
 };
